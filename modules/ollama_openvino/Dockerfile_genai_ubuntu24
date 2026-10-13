@@ -37,4 +37,4 @@ RUN go build -o /usr/bin/ollama .
 
 ENV OLLAMA_HOST=0.0.0.0:11434
 EXPOSE 11434
-ENTRYPOINT ["/bin/bash", "-c", "source /home/ollama_ov_server/openvino_genai_ubuntu24_2025.2.0.0.dev20250513_x86_64/setupvars.sh && /usr/bin/ollama serve"]
+ENTRYPOINT ["/bin/bash", "-c", "source /home/ollama_ov_server/openvino_genai_ubuntu26_2026.4.1.0_x86_64/setupvars.sh && /usr/bin/ollama serve"]
