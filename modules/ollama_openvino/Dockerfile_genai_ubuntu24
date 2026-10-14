@@ -34,6 +34,9 @@ RUN git clone https://github.com/syphyr/openvino_contrib.git
 WORKDIR /home/ollama_ov_server/openvino_contrib/modules/ollama_openvino
 
 RUN go build -o /usr/bin/ollama .
+# Create a wrapper script
+RUN printf "#!/bin/bash\ncd /home/ollama_ov_server && source /home/ollama_ov_server/openvino_genai_ubuntu26_2026.4.1.0_x86_64/setupvars.sh && exec bash\n" > /usr/local/bin/bash-ov
+RUN chmod +x /usr/local/bin/bash-ov
 
 ENV OLLAMA_HOST=0.0.0.0:11434
 EXPOSE 11434
