@@ -29,6 +29,8 @@ ENV GODEBUG=cgocheck=0
 ENV CGO_LDFLAGS=-L$GENAI_DIR/runtime/lib/intel64
 ENV CGO_CFLAGS=-I$GENAI_DIR/runtime/include
 
+ENV LD_LIBRARY_PATH=$GENAI_DIR/runtime/lib/intel64
+
 WORKDIR /home/ollama_ov_server
 RUN git clone https://github.com/syphyr/openvino_contrib.git
 WORKDIR /home/ollama_ov_server/openvino_contrib/modules/ollama_openvino
